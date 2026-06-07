@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Available Notes</h2>
+
+<form method="get" class="filter-form">
+    <select name="semester">
+        <option value="">All Semesters</option>
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+
+<div class="notes-grid">
+{% for note in notes %}
+    <div class="note-card">
+        <h3>{{ note.title }}</h3>
+        <p><strong>Subject:</strong> {{ note.subject }}</p>
+        <p><strong>Semester:</strong> {{ note.semester }}</p>
+        <a class="download-btn"
+           href="{{ url_for('static', filename='uploads/' + note.filename) }}">
+           ⬇ Download PDF
+        </a>
+    </div>
+{% else %}
+    <p>No notes available.</p>
+{% endfor %}
+</div>
+
+{% endblock %}

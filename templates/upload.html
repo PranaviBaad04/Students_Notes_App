@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Upload Notes</h2>
+
+<div class="form-card">
+<form method="post" enctype="multipart/form-data">
+    <label>Title</label>
+    <input type="text" name="title" required>
+
+    <label>Subject</label>
+    <input type="text" name="subject" required>
+
+    <label>Semester</label>
+    <input type="number" name="semester" min="1" max="8" required>
+
+    <label>Upload PDF</label>
+    <input type="file" name="file" accept=".pdf" required>
+
+    <button type="submit">Upload Notes</button>
+</form>
+</div>
+
+{% endblock %}
