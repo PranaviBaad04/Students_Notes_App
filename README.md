@@ -40,3 +40,4 @@ The application provides an easy-to-use interface for managing educational resou
 
 ## Author
 Pranavi Baad
+github: https://github.com/PranaviBaad04/Students_Notes_App
